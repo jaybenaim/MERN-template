@@ -1,0 +1,9 @@
+.navbar-nav {
+  max-height: 67px;
+}
+@media (max-width: 450px) {
+  .navbar-nav {
+    display: flex;
+    flex-direction: row;
+  }
+}

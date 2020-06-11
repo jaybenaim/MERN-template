@@ -2,11 +2,12 @@
 import { Link } from "react-router-dom";
 import styles from "./navbar.module.css";
 import Auth from "../Auth";
+import "../../assets/stylesheets/navbar.css";
 
-//TODO Web Template Studio: Add a new link in the NavBar for your page here.
+//TODO Add a new link in the NavBar for your page here.
 // A skip link is included as an accessibility best practice. For more information visit https://www.w3.org/WAI/WCAG21/Techniques/general/G1.
 const NavBar = () => {
-  const [showLogin, setShowLogin] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
 
   return (
     <React.Fragment>
@@ -18,16 +19,18 @@ const NavBar = () => {
           AGW
         </Link>
         <div className="navbar-nav">
-          <Link className="nav-item nav-link active" to="/">
+          <Link className="nav-item nav-link active " to="/">
             Home
           </Link>
+          {/* Dropdown */}
           <div
             className="nav-item nav-link"
-            onClick={() => setShowLogin(!showLogin)}
+            onClick={() => setShowDropdown(!showDropdown)}
           >
             Account
           </div>
-          {showLogin && <Auth />}
+          {showDropdown && <Auth />}
+          {/* End dropdown  */}
         </div>
       </nav>
     </React.Fragment>

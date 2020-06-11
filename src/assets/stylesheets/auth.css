@@ -1,0 +1,19 @@
+@media (min-width: 450px) {
+  .auth-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .auth-content .auth-link {
+    max-height: 24px;
+  }
+}
+@media (max-width: 451px) {
+  .auth-content {
+    display: flex;
+    flex-direction: row;
+  }
+  .auth-content .auth-link {
+    max-height: 24px;
+  }
+}

@@ -2,6 +2,8 @@ import React from "react";
 import { logoutUser } from "../../redux/actions/authActions";
 import { withRouter, Link } from "react-router-dom";
 import { connect } from "react-redux";
+import "../../assets/stylesheets/auth.css";
+
 const Auth = (props) => {
   const {
     auth: {
@@ -18,19 +20,11 @@ const Auth = (props) => {
 
   return !isAuthenticated ? (
     <div className="auth-content">
-      <Link
-        to="/login"
-        id="login"
-        className="btn btn-large  waves-effect waves-light hoverable auth-link sidenav-close"
-      >
+      <Link to="/login" id="login" className="auth-link">
         Log In
       </Link>
 
-      <Link
-        to="/register"
-        id="register"
-        className="btn btn-large waves-effect waves-light hoverable accent-3 auth-link sidenav-close"
-      >
+      <Link to="/register" id="register" className="auth-link">
         Register
       </Link>
     </div>
@@ -39,7 +33,7 @@ const Auth = (props) => {
       <button
         id="logout"
         onClick={(e) => onLogoutClick(e)}
-        className="btn btn-large waves-effect waves-light hoverable  accent-3 auth-link sidenav-close"
+        className=" auth-link"
       >
         Logout <span className="auth-content--name"> {name}?</span>
       </button>
