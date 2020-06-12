@@ -2,6 +2,8 @@ import React from "react";
 import { logoutUser } from "../../redux/actions/authActions";
 import { withRouter, Link } from "react-router-dom";
 import { connect } from "react-redux";
+
+import { Dropdown } from "react-bootstrap";
 import "../../assets/stylesheets/auth.css";
 
 const Auth = (props) => {
@@ -20,11 +22,10 @@ const Auth = (props) => {
 
   return !isAuthenticated ? (
     <div className="auth-content">
-      <Link to="/login" id="login" className="auth-link">
+      <Link to="/login" className="auth-link">
         Log In
       </Link>
-
-      <Link to="/register" id="register" className="auth-link">
+      <Link to="/register" className="auth-link">
         Register
       </Link>
     </div>

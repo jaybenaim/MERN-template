@@ -2,6 +2,8 @@
 import { Link } from "react-router-dom";
 import styles from "./navbar.module.css";
 import Auth from "../Auth";
+
+import { Dropdown } from "react-bootstrap";
 import "../../assets/stylesheets/navbar.css";
 
 //TODO Add a new link in the NavBar for your page here.
@@ -23,13 +25,19 @@ const NavBar = () => {
             Home
           </Link>
           {/* Dropdown */}
-          <div
+          <Dropdown>
+            <Dropdown.Toggle id="navbar-toggle">Account</Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Auth />
+            </Dropdown.Menu>
+          </Dropdown>
+          {/* <div
             className="nav-item nav-link"
             onClick={() => setShowDropdown(!showDropdown)}
           >
             Account
           </div>
-          {showDropdown && <Auth />}
+          {showDropdown && <Auth />} */}
           {/* End dropdown  */}
         </div>
       </nav>
