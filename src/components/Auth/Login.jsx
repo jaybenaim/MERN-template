@@ -21,6 +21,9 @@ class Login extends Component {
     }
     return null;
   }
+  componentDidMount() {
+    this.setState({ errors: {} });
+  }
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.auth.isAuthenticated) {
       prevProps.history.push("/");
@@ -77,11 +80,14 @@ class Login extends Component {
                   error={errors.email}
                   id="email"
                   type="email"
+                  placeholder="Email"
                   className={classnames("", {
                     invalid: errors.email || errors.emailnotfound,
                   })}
                 />
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email" style={{ display: "none" }}>
+                  Email
+                </label>
                 <span className="red-text">
                   {errors.email}
                   {errors.emailnotfound}
@@ -97,8 +103,11 @@ class Login extends Component {
                   })}
                   id="password"
                   type="password"
+                  placeholder="Password"
                 />
-                <label htmlFor="password">Password</label>
+                <label htmlFor="password" style={{ display: "none" }}>
+                  Password
+                </label>
                 <span className="red-text">
                   {errors.password}
                   {errors.passwordincorrect}
